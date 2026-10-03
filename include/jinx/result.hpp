@@ -71,9 +71,10 @@ public:
         jinx_assert(_empty && "Unahndled result");
 #endif
         _empty = other._empty;
+        other._empty = true;
 #endif
         _value = other._value;
-        other._empty = true;
+        return *this;
     }
 
     JINX_NO_COPY(Result);
